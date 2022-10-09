@@ -40,7 +40,7 @@ module Controllers
       # Outputs the grid lines, border, and filled squares onto the screen.
       outputs.lines.concat state.grid_lines
       outputs.borders << state.grid_border
-      outputs.sprites << state.filled_squares
+      outputs.solids << state.filled_squares
     end
 
     # Draws the grid by adding in vertical and horizontal separators.
@@ -124,13 +124,16 @@ module Controllers
       # Sets definition of a grid box, meaning its x, y, width, and height.
       # Floor is called on the point.x and point.y variables.
       # Ceil method is called on values of the distance hash keys, setting the width and height of a box.
-      grid_box = [
-        point.x.floor,
-        point.y.floor,
-        state.paint_grid['dist_x'].ceil,
-        state.paint_grid['dist_y'].ceil,
-        'sprites/square/black.png'
-      ]
+      grid_box = {
+        x:    point.x.floor,
+        y:    point.y.floor,
+        w:    state.paint_grid['dist_x'].ceil,
+        h:    state.paint_grid['dist_y'].ceil,
+        r:    0,
+        g:    0,
+        b:    0,
+        a:    255
+      }
 
       case input_type
       when :click # if user clicks their mouse
