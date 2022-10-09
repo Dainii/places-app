@@ -1,0 +1,18 @@
+AllCops:
+  DisabledByDefault: true
+  NewCops: enable
+
+Layout:
+  Enabled: true
+
+Style:
+  Enabled: true
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/GlobalVars:
+  Enabled: false
+
+Style/RedundantFileExtensionInRequire:
+  Enabled: false
