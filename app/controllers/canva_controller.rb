@@ -125,14 +125,14 @@ module Controllers
       # Floor is called on the point.x and point.y variables.
       # Ceil method is called on values of the distance hash keys, setting the width and height of a box.
       grid_box = {
-        x:    point.x.floor,
-        y:    point.y.floor,
-        w:    state.paint_grid['dist_x'].ceil,
-        h:    state.paint_grid['dist_y'].ceil,
-        r:    0,
-        g:    0,
-        b:    0,
-        a:    255
+        x: point.x.floor,
+        y: point.y.floor,
+        w: state.paint_grid['dist_x'].ceil,
+        h: state.paint_grid['dist_y'].ceil,
+        r: 0,
+        g: 0,
+        b: 0,
+        a: 255
       }
 
       case input_type
